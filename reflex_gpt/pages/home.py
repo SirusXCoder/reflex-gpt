@@ -1,7 +1,7 @@
 import reflex as rx
 from rxconfig import config
 
-from reflex_gpt import ui
+from reflex_gpt import ui, navigation
 
 
 def home_page() -> rx.Component:
@@ -20,6 +20,8 @@ def home_page() -> rx.Component:
                 href="https://reflex.dev/docs/getting-started/introduction/",
                 is_external=True,
             ),
+            rx.box("Go to about",
+            on_click=navigation.state.NavState.to_about_us),
             spacing="5",
             justify="center",
             min_height="85vh",
